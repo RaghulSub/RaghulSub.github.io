@@ -59,7 +59,7 @@ function wrapSvg(svg: string, attrs: Record<string, string>): string {
     if (result.includes(attrName + '="')) {
       result = result.replace(
         new RegExp(`${attrName}="([^"]*)"`, 'g'),
-        `${attrName}="$1 ${value}"`
+        `${attrName}="${value}"`
       );
     } else {
       result = result.replace('<svg', `<svg ${attrName}="${value}"`);
