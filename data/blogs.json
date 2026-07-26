@@ -1,0 +1,39 @@
+{
+  "data": [
+
+    {
+      "slug": "building-a-custom-vanilla-spa",
+      "title": "Building a Custom Vanilla SPA from Scratch",
+      "description": "Why I decided to build my portfolio using a custom Vanilla TypeScript single-page application router instead of relying on mainstream frameworks like React.",
+      "date": "2026-04-18",
+      "tags": ["TypeScript", "Architecture", "Web"],
+      "author": "Raghul Subramanian"
+    }
+  ],
+  "test-comments": [
+    {
+      "slug": "markdown-test-suite",
+      "title": "The Ultimate Markdown Test Suite",
+      "description": "A comprehensive showcase of every single markdown feature supported by this custom Vanilla SPA blog engine.",
+      "date": "2026-04-20",
+      "tags": ["Testing", "Markdown", "Showcase"],
+      "author": "Raghul"
+    },
+    {
+      "slug": "mastering-vanilla-javascript",
+      "title": "30 Tips for Mastering Vanilla JavaScript",
+      "description": "A comprehensive guide with 30 essential tips for modern Vanilla JavaScript development without frameworks.",
+      "date": "2026-04-19",
+      "tags": ["JavaScript", "Web Dev", "Tutorial"],
+      "author": "Raghul"
+    },
+    {
+      "slug": "why-typescript",
+      "title": "Why TypeScript is Non-Negotiable",
+      "description": "A quick look at why I use TypeScript for every new project and why you probably should too.",
+      "date": "2025-10-12",
+      "tags": ["TypeScript", "Productivity"],
+      "author": "Raghul Subramanian"
+    }
+  ]
+}

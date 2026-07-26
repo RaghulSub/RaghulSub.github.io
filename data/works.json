@@ -1,0 +1,21 @@
+{
+  "experience": {
+    "data": [
+      {
+        "slug": "gogosoon",
+        "role": "Software Development Intern",
+        "company": "Gogosoon Pvt. Ltd.",
+        "period": "August 2024 – March 2025",
+        "description": "Engineered multi-threaded data collectors for US/India indices, handling high-concurrency ingestion with 100% integrity.",
+        "bullets": [
+          "Engineered multi-threaded data collectors for US/India indices, handling high-concurrency ingestion with 100% integrity.",
+          "Scripted schema migration logic for 3.4M records, resolving structural discrepancies between legacy and target databases.",
+          "Translated research papers into custom Python simulation scripts to verify theoretical returns on historical market data."
+        ]
+      }
+    ]
+  },
+  "works": {
+    "data": []
+  }
+}

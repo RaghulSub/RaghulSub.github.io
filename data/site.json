@@ -1,0 +1,27 @@
+{
+  "name": "Raghul Subramanian",
+  "title": "Software Engineer",
+  "description": "Portfolio of Raghul Subramanian",
+  "url": "https://raghulsub.me",
+  "socials": {
+    "data": [
+      { "platform": "github", "url": "https://github.com/RaghulSub", "label": "GitHub" },
+      { "platform": "linkedin", "url": "https://linkedin.com/in/raghulsubramanian", "label": "LinkedIn" },
+      { "platform": "leetcode", "url": "https://leetcode.com/u/RaghulSub", "label": "LeetCode" },
+      { "platform": "codeforces", "url": "https://codeforces.com/profile/RaghulSub", "label": "Codeforces" },
+      { "platform": "codeberg", "url": "https://codeberg.org/RaghulSub", "label": "Codeberg" },
+      { "platform": "mail", "url": "mailto:raghulsubramanian10@gmail.com", "label": "Email" }
+    ]
+  },
+  "nav": {
+    "data": [
+      { "label": "Home", "path": "#/home" },
+      { "label": "Works", "path": "#/works" },
+      { "label": "Blog", "path": "#/blogs" }
+    ]
+  },
+  "theme": {
+    "default": "dark",
+    "toggle": true
+  }
+}

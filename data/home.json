@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Raghul Subramanian",
+    "title": "Software Engineer",
+    "bio": "I build things for the web. Passionate about clean code, developer tooling, and solving hard problems.",
+    "image": ""
+  },
+  "featuredWorks": {
+    "data": 3
+  },
+  "ctaLinks": {
+    "data": [
+      { "label": "View all works", "path": "#/works", "icon": "arrow-right" },
+      { "label": "Read my blog", "path": "#/blogs", "icon": "arrow-right" }
+    ]
+  }
+}

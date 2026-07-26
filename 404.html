@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Raghul Subramanian</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+      var path = window.location.pathname;
+      var hash = window.location.hash;
+      if (!hash || hash === '#' || hash === '#/') {
+        window.location.href = '#/home';
+      } else {
+        window.location.href = '#' + path;
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__inner">
+        <ul class="nav__links">
+            <li><a href="#/home" class="nav__link" data-nav>Home</a></li>
+          <li><a href="#/projects" class="nav__link" data-nav>Projects</a></li>
+          <li><a href="#/blogs" class="nav__link" data-nav>Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main">
+      <div class="container">
+        <div class="empty-state">
+          <h1 class="empty-state__title">404</h1>
+          <p class="empty-state__text">This page doesn't exist.</p>
+          <div class="cta-group" style="justify-content: center;">
+            <a href="#/home" class="btn" data-nav>
+              Go home
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

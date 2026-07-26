@@ -1,0 +1,37 @@
+{
+  "name": "raghulsub.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:bundle && npm run build:copy",
+    "build:bundle": "esbuild src/main.ts --bundle --outfile=dist/bundle.js --format=esm --target=esnext --minify",
+    "build:copy": "node scripts/build.js",
+    "dev": "esbuild src/main.ts --bundle --outfile=dist/bundle.js --format=esm --target=esnext --watch",
+    "serve": "npx serve dist -l 3000",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaghulSub/RaghulSub.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RaghulSub/RaghulSub.github.io/issues"
+  },
+  "homepage": "https://github.com/RaghulSub/RaghulSub.github.io#readme",
+  "dependencies": {
+    "@types/dompurify": "^3.0.5",
+    "dompurify": "^3.4.12",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.2"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.4"
+  }
+}

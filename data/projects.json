@@ -1,0 +1,45 @@
+{
+  "projects": {
+    "data": [
+      {
+        "slug": "parametric-yantra-generator",
+        "title": "Parametric Yantra Generator",
+        "description": "SIH 2025 Winner — Parametric software to generate dimensions of ancient Indian astronomical instruments (yantras) for any latitude and longitude in India.",
+        "longDescription": "<ul><li>Generates parametric dimensions for instruments like Samrat Yantra, Rama Yantra, Digamsa Yantra, and more based on geographic coordinates</li><li>Built for Smart India Hackathon 2025 under AICTE's Indian Knowledge Systems (IKS) category</li><li>Uses Three.js for interactive 3D visualization of astronomical instruments and accurate sky simulation</li><li>Features realistic celestial body positioning for immersive astronomical simulation</li><li>Supports instruments calibrated for historical locations like Delhi, Jaipur, Varanasi, and Ujjain</li><li>Preserves and promotes understanding of India's rich astronomical heritage</li></ul>",
+        "tags": ["Three.js", "Typescript"],
+        "links": {
+          "source": ""
+        },
+        "featured": true,
+        "date": "2025-12-01",
+        "joke": "The ancient scholars strictly forbade pushing these cosmic calculations to a public repo."
+      },
+      {
+        "slug": "exam-proctor-platform",
+        "title": "Exam Proctor Platform",
+        "description": "A 3-way proctoring system to protect from cheating in examinations, featuring AI-powered cheating detection using WebAssembly.",
+        "longDescription": "<ul><li>3-way proctoring system for comprehensive exam integrity protection</li><li>AI-powered cheating detection using WebAssembly (WASM) for browser-based real-time analysis</li><li>Detects eye and head movements to identify suspicious behavior</li><li>Valid candidate verification system with face recognition</li><li>Test creation and management system to send assessments only to verified registered candidates via email</li><li>Comprehensive report generation with cheating incident logs and candidate exam scorecards</li><li>Integrates seamlessly with Safe Exam Browser for secure exam delivery</li></ul>",
+        "tags": ["Node.js", "Next.js", "TypeScript", "Express.js"],
+        "links": {
+          "source": ""
+        },
+        "featured": true,
+        "date": "2025-09-01",
+        "joke": "Publishing the source code for an anti-cheat platform is essentially writing a tutorial on how to cheat."
+      },
+      {
+        "slug": "portfolio-website",
+        "title": "Portfolio Website",
+        "description": "A personal portfolio website built with vanilla TypeScript, featuring a custom SPA router, blog system, and project showcase.",
+        "longDescription": "<ul><li>Custom single-page application router without framework dependencies</li><li>Blog system with markdown support</li><li>Project showcase with filtering and detail views</li><li>Dark/light theme toggle</li><li>Responsive design with mobile-first approach</li><li>Fast page loads with client-side navigation</li></ul>",
+        "tags": ["TypeScript", "HTML", "SPA"],
+        "links": {
+          "source": "https://github.com/RaghulSub/RaghulSub.github.io"
+        },
+        "featured": true,
+        "date": "2025-04-01",
+        "joke": "Built from scratch because 'npm install react' felt too mainstream."
+      }
+    ]
+  }
+}
