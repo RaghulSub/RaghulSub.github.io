@@ -8,7 +8,7 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { BlogsPage } from './pages/BlogsPage';
 import { BlogPostPage } from './pages/BlogPostPage';
-import { preloadIcons } from './components/Icon';
+import { preloadIcons, getIcon } from './components/Icon';
 
 async function bootstrap() {
   if (!location.hash) {
@@ -58,17 +58,13 @@ async function bootstrap() {
 
 document.addEventListener('click', (e) => {
   const target = e.target as Element;
-  if (target.closest('#theme-toggle')) {
+  const toggle = target.closest('#theme-toggle') as HTMLElement | null;
+  if (toggle) {
     const next = toggleTheme();
-    const icon = target.closest('#theme-toggle')?.querySelector('svg');
-    if (icon) {
-      const name = next === 'dark' ? 'moon' : 'sun';
-      fetch(`assets/icons/${name}.svg`)
-        .then(r => r.text())
-        .then(svg => {
-          icon.outerHTML = svg.replace('<svg', '<svg width="18" height="18"');
-        });
-    }
+    const name = next === 'dark' ? 'moon' : 'sun';
+    getIcon(name, { width: '18', height: '18' }).then(svg => {
+      if (svg) toggle.innerHTML = svg;
+    });
   }
 });
 

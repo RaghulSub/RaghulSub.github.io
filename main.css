@@ -718,7 +718,7 @@ mark {
 /* Blog Post Layout */
 .blog-layout {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 2rem;
   width: 100%;
 }

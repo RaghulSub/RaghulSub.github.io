@@ -20,16 +20,16 @@ export function IconSync(name: string, attrs: Record<string, string> = {}): stri
   if (iconCache[name]) {
     return wrapSvg(iconCache[name], attrs);
   }
-  const placeholder = `<span class="icon-placeholder" data-icon="${name}"></span>`;
-  loadIconAsync(name, attrs);
+  const placeholder = `<span class="icon-placeholder" data-icon="${name}" data-attrs='${JSON.stringify(attrs).replace(/'/g, '&#39;')}'></span>`;
+  loadIconAsync(name);
   return placeholder;
 }
 
-async function loadIconAsync(name: string, attrs: Record<string, string>): Promise<void> {
+async function loadIconAsync(name: string): Promise<void> {
   if (name in pendingRequests) {
     await pendingRequests[name];
     document.querySelectorAll(`[data-icon="${name}"]`).forEach(el => {
-      el.outerHTML = iconCache[name] ? wrapSvg(iconCache[name], attrs) : '';
+      el.outerHTML = iconCache[name] ? wrapSvg(iconCache[name], attrsFromElement(el)) : '';
     });
     return;
   }
@@ -40,10 +40,11 @@ async function loadIconAsync(name: string, attrs: Record<string, string>): Promi
       const svg = await res.text();
       iconCache[name] = svg;
       document.querySelectorAll(`[data-icon="${name}"]`).forEach(el => {
-        el.outerHTML = wrapSvg(svg, attrs);
+        el.outerHTML = wrapSvg(svg, attrsFromElement(el));
       });
     } catch {
-      document.querySelectorAll(`[data-icon="${name}"]`).forEach(el => el.remove());
+      // Don't remove on error — keep placeholder so button structure stays intact
+      // Could retry later via user interaction
     } finally {
       delete pendingRequests[name];
     }
@@ -52,20 +53,38 @@ async function loadIconAsync(name: string, attrs: Record<string, string>): Promi
   await pendingRequests[name];
 }
 
+function attrsFromElement(el: Element): Record<string, string> {
+  try {
+    return JSON.parse(el.getAttribute('data-attrs') || '{}');
+  } catch {
+    return {};
+  }
+}
+
 function wrapSvg(svg: string, attrs: Record<string, string>): string {
   let result = svg;
   for (const [key, value] of Object.entries(attrs)) {
     const attrName = key === 'className' ? 'class' : key;
-    if (result.includes(attrName + '="')) {
-      result = result.replace(
-        new RegExp(`${attrName}="([^"]*)"`, 'g'),
-        `${attrName}="${value}"`
-      );
+    const regex = new RegExp(`\\s${attrName}="([^"]*)"`, 'g');
+    if (regex.test(result)) {
+      result = result.replace(regex, ` ${attrName}="${value}"`);
     } else {
       result = result.replace('<svg', `<svg ${attrName}="${value}"`);
     }
   }
   return result;
+}
+
+export async function getIcon(name: string, attrs: Record<string, string> = {}): Promise<string> {
+  if (!iconCache[name]) {
+    try {
+      const res = await fetch(`assets/icons/${name}.svg`);
+      iconCache[name] = await res.text();
+    } catch {
+      return '';
+    }
+  }
+  return wrapSvg(iconCache[name], attrs);
 }
 
 export async function preloadIcons(names: string[]): Promise<void> {
